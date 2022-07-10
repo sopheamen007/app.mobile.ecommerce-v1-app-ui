@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:ecommerce_app/dummy/side_menu_json.dart';
 import 'package:ecommerce_app/pages/favourite_page.dart';
 import 'package:ecommerce_app/pages/home_page.dart';
 import 'package:ecommerce_app/pages/my_cart_page.dart';
@@ -63,40 +64,14 @@ class _SideMenuPageState extends State<SideMenuPage> {
   }
 
   Widget getBodyItems() {
-    List items = [
-      {
-        "label": "Home",
-        "selected": true,
-        "icon": LineIcons.home,
-        "page": HomePage()
-      },
-      {
-        "label": "My Cart",
-        "selected": false,
-        "icon": LineIcons.shoppingCart,
-        "page": MyCartPage()
-      },
-      {
-        "label": "Favourite",
-        "selected": false,
-        "icon": LineIcons.heart,
-        "page": FavouritePage()
-      },
-      {
-        "label": "Orders",
-        "selected": false,
-        "icon": LineIcons.history,
-        "page": OrderPage()
-      },
-    ];
     return Column(
-      children: List.generate(items.length, (index) {
-        if (items[index]['selected']) {
+      children: List.generate(sideMenuItems.length, (index) {
+        if (sideMenuItems[index]['selected']) {
           return FadeInLeft(
             duration: Duration(milliseconds: 200),
             child: Padding(
-              padding:
-                  const EdgeInsets.only(left: 20, right: 20, bottom: 15, top: 15),
+              padding: const EdgeInsets.only(
+                  left: 20, right: 20, bottom: 15, top: 15),
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
@@ -111,16 +86,18 @@ class _SideMenuPageState extends State<SideMenuPage> {
                 child: ListTile(
                   onTap: () {
                     Navigator.pop(context);
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => items[index]['page']));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => sideMenuItems[index]['page']));
                   },
                   minLeadingWidth: 10,
                   leading: Icon(
-                    items[index]['icon'],
+                    sideMenuItems[index]['icon'],
                     color: secondary,
                   ),
                   title: Text(
-                    items[index]['label'],
+                    sideMenuItems[index]['label'],
                     style: TextStyle(fontSize: 16, color: secondary),
                   ),
                 ),
@@ -129,25 +106,26 @@ class _SideMenuPageState extends State<SideMenuPage> {
           );
         }
         return FadeInLeft(
-          duration: Duration(milliseconds: index*200),
+          duration: Duration(milliseconds: index * 200),
           child: Container(
             margin: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
             child: ListTile(
               onTap: () {
                 Navigator.pop(context);
-        
+
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => items[index]['page']));
+                    MaterialPageRoute(builder: (_) => sideMenuItems[index]['page']));
               },
               minLeadingWidth: 20,
               leading: Icon(
-                items[index]['icon'],
+                sideMenuItems[index]['icon'],
                 color: secondary.withOpacity(0.8),
                 size: 26,
               ),
               title: Text(
-                items[index]['label'],
-                style: TextStyle(fontSize: 16, color: secondary.withOpacity(0.8)),
+                sideMenuItems[index]['label'],
+                style:
+                    TextStyle(fontSize: 16, color: secondary.withOpacity(0.8)),
               ),
             ),
           ),
@@ -174,7 +152,8 @@ class _SideMenuPageState extends State<SideMenuPage> {
               ),
               title: Text(
                 "Logout",
-                style: TextStyle(fontSize: 16, color: secondary.withOpacity(0.8)),
+                style:
+                    TextStyle(fontSize: 16, color: secondary.withOpacity(0.8)),
               ),
             ),
           ),

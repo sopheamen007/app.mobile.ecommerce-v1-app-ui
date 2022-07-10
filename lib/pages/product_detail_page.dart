@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:ecommerce_app/theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:line_icons/line_icons.dart';
 
 class ProductDetailPage extends StatefulWidget {

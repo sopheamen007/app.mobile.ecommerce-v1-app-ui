@@ -1,3 +1,10 @@
+List categoryItems = [
+      {"title": "Shoes"},
+      {"title": "Clothing"},
+      {"title": "Laptops"},
+      {"title": "Mobile"}
+    ];
+    
 const List homeJson = [
   {
     "image" : "assets/images/shoes_3_1_.png",
@@ -62,6 +69,5 @@ const List homeJson = [
       "assets/images/shoes_8_1_.png",
     ]
   },
-  
-  
+
 ];

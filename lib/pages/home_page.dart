@@ -113,12 +113,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget getCategorySection() {
     var size = MediaQuery.of(context).size;
-    List categoryItems = [
-      {"title": "Shoes"},
-      {"title": "Clothing"},
-      {"title": "Laptops"},
-      {"title": "Mobile"}
-    ];
+    
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
