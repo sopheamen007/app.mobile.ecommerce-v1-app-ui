@@ -1,4 +1,9 @@
-# ecommerce_app
+# E-Commerce Clone App UI
+
+- [Support me on Patreon](https://www.patreon.com/sopheamenvan?fan_landing=true)
+- [Watch on youtube](https://youtu.be/-KvD42LLfBU)
+
+![E-Commerce App UI](https://user-images.githubusercontent.com/16510597/180595687-c3308726-f965-4a84-a235-2444ec5be918.jpeg)
 
 A new Flutter project.
 
